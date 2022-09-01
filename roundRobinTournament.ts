@@ -169,33 +169,33 @@ console.log(tournament)
 // // **********************************************************************************************************************************
 // // **********************************************************************************************************************************
 
-// Sorting functions 
+// Filtering functions 
  
-function sortByOpponents(playerName : any){
+function filterByOpponents(playerName : any){
     let matches = tournament.matches.filter(element => element.opponent1.includes(playerName) || element.opponent2.includes(playerName))
     console.log(`\nList of matches in which team '${playerName}' participating:`)
     console.log(matches)
 }
 
-function sortByVenue(enteredvenue:any){
+function filterByVenue(enteredvenue:any){
     let matches = tournament.matches.filter(element => element.venue.includes(enteredvenue))
     console.log(`\nList of matches, which are all happening in the '${enteredvenue}':`)
     console.log(matches)
 }
 
-function sortByMatchID(enteredMatchID:any){
+function filterByMatchID(enteredMatchID:any){
     let matches = tournament.matches.filter(element => element.matchId.includes(enteredMatchID))
     console.log(`\nDetails for the matchID '${enteredMatchID}':`)
     console.log(matches)
 }
 
-function sortBySlot(enteredslot:any){
+function filterBySlot(enteredslot:any){
     let matches = tournament.matches.filter(element => element.slot.includes(enteredslot))
     console.log(`\nList of matches, which are all will be conducted in the '${enteredslot}' slot:`)
     console.log(matches)
 }
 
-function sortByDate(enteredDate:any){
+function filterByDate(enteredDate:any){
     let matches = tournament.matches.filter(element => element.date.includes(enteredDate))
     console.log(`\nList of matches, which are happening in the Date :- '${enteredDate}':`)
     console.log(matches)
@@ -204,8 +204,10 @@ function sortByDate(enteredDate:any){
 // **********************************************************************************************************************************
 // **********************************************************************************************************************************
 
-// sortByOpponents('ORANGE')
-// sortByMatchID('RRT22OH_ORCH')
-// sortBySlot('Morning')
-// sortByVenue('chennai')
-// sortByDate('24.9.2022')
+// You can filter the team by the following factors
+
+// filterByOpponents('ORANGE')
+// filterByMatchID('RRT22OH_ORCH')
+// filterBySlot('Morning')
+// filterByVenue('chennai')
+// filterByDate('24.9.2022')
