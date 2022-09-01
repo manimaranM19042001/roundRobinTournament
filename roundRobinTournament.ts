@@ -204,7 +204,7 @@ function filterByDate(enteredDate:any){
 // **********************************************************************************************************************************
 // **********************************************************************************************************************************
 
-// You can filter the team by the following factors
+// You can filter the teams by the following factors
 
 // filterByOpponents('ORANGE')
 // filterByMatchID('RRT22OH_ORCH')
