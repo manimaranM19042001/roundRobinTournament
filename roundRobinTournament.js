@@ -1,5 +1,5 @@
 let tournament = {
-    teamNames: ["APPLE", "ORANGE", "PINEAPPLE", "MELON", "CHERRY", "BLUEBERRY","CUCUMBER"],
+    teamNames: ["APPLE", "ORANGE", "PINEAPPLE", "MELON", "CHERRY",],
     venue :"chennai",
     startDate : "2022-09-13",
 }
@@ -85,7 +85,6 @@ function assignDate( tournament){
     startDate = new Date(tournament.startDate)
     matches = tournament.matches
     noOfMatches = Number (tournament.matches.length)
-    const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]; // Days in a week
     const secsInADAy  = ( 24 * 60 * 60 * 1000)       // Seconds in a day
 
     // Sub Function 1 : Format the date Ex: '18/9/2022'
@@ -164,38 +163,38 @@ function assignDate( tournament){
 
 tournament = assignDate( tournament)
 
-// console.table(tournament.matches)
+console.table(tournament.matches)
 
 // **********************************************************************************************************************************
 // **********************************************************************************************************************************
 
-// Sorting functions 
+// Filtering functions 
  
-function sortByOpponents(playerName){
+function filterByOpponents(playerName){
     matches = tournament.matches.filter(element => element.opponent1.includes(playerName) || element.opponent2.includes(playerName))
     console.log(`\nList of matches in which team '${playerName}' participating:`)
     console.table(matches)
 }
 
-function sortByVenue(enteredvenue){
+function filterByVenue(enteredvenue){
     matches = tournament.matches.filter(element => element.venue.includes(enteredvenue))
     console.log(`\nList of matches, which are all happening in the '${enteredvenue}':`)
     console.table(matches)
 }
 
-function sortByMatchID(enteredMatchID){
+function filterByMatchID(enteredMatchID){
     matches = tournament.matches.filter(element => element.matchId.includes(enteredMatchID))
     console.log(`\nDetails for the matchID '${enteredMatchID}':`)
     console.table(matches)
 }
 
-function sortBySlot(enteredslot){
+function filterBySlot(enteredslot){
     matches = tournament.matches.filter(element => element.slot.includes(enteredslot))
     console.log(`\nList of matches, which are all will be conducted in the '${enteredslot}' slot:`)
     console.table(matches)
 }
 
-function sortByDate(enteredDate){
+function filterByDate(enteredDate){
     matches = tournament.matches.filter(element => element.date.includes(enteredDate))
     console.log(`\nList of matches, which are happening in the Date :- '${enteredDate}':`)
     console.table(matches)
@@ -204,8 +203,10 @@ function sortByDate(enteredDate){
 // **********************************************************************************************************************************
 // **********************************************************************************************************************************
 
-sortByOpponents('ORANGE')
-sortByMatchID('RRT22OH_ORCH')
-sortBySlot('Morning')
-sortByVenue('chennai')
-sortByDate('24.9.2022')
+// You can filter the teams by the following factors
+
+filterByOpponents('ORANGE')
+filterByMatchID('RRT22OH_ORCH')
+filterBySlot('Morning')
+filterByVenue('chennai')
+filterByDate('24.9.2022')
